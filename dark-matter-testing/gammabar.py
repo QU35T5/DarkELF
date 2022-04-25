@@ -30,4 +30,4 @@ def p1(v_z):
                 (v_esc - v_e < v_z < v_esc + v_e)
 
 #J: My idea is to evaluate the double integral (wrt k and omega) using scipy's dlbquad,
-#   and then multiplying this with the solid angle integral (also eval. using dblquad)
+#   and then multiplying this by the solid angle integral (entire unit sphere, also using dblquad)
