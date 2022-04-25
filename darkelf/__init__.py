@@ -6,10 +6,10 @@ from scipy.special import erf, erfc
 import pandas as pd
 import sys, os, glob
 import yaml
-
+# def __init__(self, mX = 1e5, mMed = -1, vesckms = 500, v0kms = 220, vekms = 240, delta = 0.0, q0=0.0, 
 
 class darkelf(object):
-    def __init__(self, mX = 1e5, mMed = -1, vesckms = 500, v0kms = 220, vekms = 240, delta = 0.0, q0=0.0, 
+    def __init__(self, mX = 1e5, mMed = -1, vesckms = 600, v0kms = 230, vekms = 240, delta = 0.0, q0=0.0, 
         target='Ge',targetyaml='',filename="Ge_gpaw_withLFE.dat", phonon_filename="Ge_epsphonon.dat",
         eps_data_dir = os.path.dirname(__file__)+"/../data/"):
 
