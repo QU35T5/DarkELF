@@ -21,3 +21,5 @@ sys.path.append(work_dir+"/..")
 plotdir=work_dir+"/plots/"
 
 from darkelf import darkelf,targets
+targets.files("Si")
+Si = darkelf(target='Si',filename='Si_gpaw_withLFE.dat',phonon_filename="Si_epsphonon_data6K.dat")
