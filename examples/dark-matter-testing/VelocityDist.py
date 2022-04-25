@@ -4,10 +4,10 @@ from scipy.special import erf
 import math 
 import matplotlib.pyplot as plt
 
-# velocities (m/s)
-v_0   = 23e4
-v_e   = 24e4
-v_esc = 60e4
+# velocities (km/s)
+v_0   = 230
+v_e   = 240
+v_esc = 600
 
 N_0 = np.pi**(3/2)*v_0**2*(v_0*math.erf(v_esc/v_0) - \
       2*v_esc/np.sqrt(np.pi)*np.exp(-v_esc**2/v_0**2))
