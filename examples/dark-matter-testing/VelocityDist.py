@@ -40,5 +40,9 @@ for i in range(len(K)):
                 Y[i][j] = W[i][j]/(v_0**2*m_chi) 
 
 plt.contourf(X,Y,contour_func,9)
-plt.colorbar()
+plt.xlabel(r'$k/(m_\chi v_0)$')
+plt.ylabel(r'$\omega/(m_\chi v_0^2)$')
+cbar = plt.colorbar()
+cbar.set_label(r'$\frac{\omega}{k}p_1\left( \frac{\omega}{k} + \frac{k}{wm_\chi} \right) \mathrm{\; [s/km]}$')
 plt.show()
+#plt.savefig('velocitydist.pdf',bbox_inches='tight')
