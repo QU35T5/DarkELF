@@ -4,15 +4,14 @@ from scipy.special import erf
 import math 
 import matplotlib.pyplot as plt
 
-# velocities (km/s)
-v_0   = 230
-v_e   = 240
-v_esc = 600
-
+#Velocities (km/s)
+v_0   = 230 #Halo velocity
+v_e   = 240 #Earth velocity
+v_esc = 600 #Galaxy escape velocity
+  
+#Probability distribution for DM-velocities
 N_0 = np.pi**(3/2)*v_0**2*(v_0*math.erf(v_esc/v_0) - \
       2*v_esc/np.sqrt(np.pi)*np.exp(-v_esc**2/v_0**2))
-  
-#Truncated Maxwell-Boltzmann Distribution (Appendix B heterostructures)
 a = (np.pi**(3/2)*v_0**3)/(4*v_e*N_0)
 
 def p1(v_z):
@@ -26,6 +25,7 @@ m_chi = 1e4
 omega = np.linspace(0,3*m_chi*v_0**2)
 k     = np.linspace(0,3*m_chi*v_0)
 
+#Contour graph routine
 np.seterr(divide='ignore', invalid='ignore')
 [K,W] = np.meshgrid(k,omega)
 
@@ -45,4 +45,6 @@ plt.ylabel(r'$\omega/(m_\chi v_0^2)$')
 cbar = plt.colorbar()
 cbar.set_label(r'$\frac{\omega}{k}p_1\left( \frac{\omega}{k} + \frac{k}{wm_\chi} \right) \mathrm{\; [s/km]}$')
 plt.show()
-#plt.savefig('velocitydist.pdf',bbox_inches='tight')
+
+#Saves figure as a pdf-file to the 'figures' folder
+#plt.savefig('figures/velocitydist.pdf',bbox_inches='tight')
